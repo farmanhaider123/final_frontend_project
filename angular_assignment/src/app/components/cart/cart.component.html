@@ -1,0 +1,106 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<hr *ngIf="proData.length > 0" />
+<section *ngIf="proData.length > 0" class="cart_section">
+  <div class="container">
+    <h2>Cart</h2>
+    <div *ngIf="proData.length > 0">
+      <table>
+        <tr>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Sub Total</th>
+          <th>Remove Item</th>
+        </tr>
+        <tr *ngFor="let getCartDetail of proData">
+          <td>
+            <img class="cartimag" src="{{ getCartDetail.image }}" alt="P1" />
+          </td>
+          <td>₹ {{ getCartDetail.price }}</td>
+          <td>
+            <div class="content">
+              <button
+                type="button"
+                class="btn1"
+                (click)="incQnt(getCartDetail._id, getCartDetail.quantity)"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+              <span>{{ getCartDetail.quantity }}</span>
+              <button
+                type="button"
+                class="btn1"
+                (click)="decQnt(getCartDetail._id, getCartDetail.quantity)"
+              >
+                <i class="fa fa-minus"></i>
+              </button>
+            </div>
+          </td>
+          <td>₹ {{ getCartDetail.quantity * getCartDetail.price | number }}</td>
+          <td>
+            <button
+              type="button"
+              class="delete"
+              (click)="delPro(getCartDetail._id)"
+            >
+              <i class="fa fa-trash"> </i>
+            </button>
+          </td>
+        </tr>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Total : ₹ {{ total }}</h3>
+          </div>
+          <div class="col-md-6 text-right">
+            <button
+              *ngIf="proData.length > 1"
+              type="button"
+              class="removeall"
+              (click)="removeall()"
+            >
+              <i class="fa fa-trash"></i>
+              Remove All Item
+            </button>
+            <a class="btn btn-primary" (click)="checkout()">Checkout</a>
+          </div>
+        </div>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="proData.length == 0" class="container-fluid mt-100">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Cart</h5>
+        </div>
+        <div class="card-body cart">
+          <div class="col-sm-12 empty-cart-cls text-center">
+            <img
+              src="https://i.imgur.com/dCdflKN.png"
+              width="130"
+              height="130"
+              class="img-fluid mb-4 mr-3"
+            />
+            <h3><strong>Your Cart is Empty</strong></h3>
+            <h4>Add something to make me happy :)</h4>
+            <a
+              routerLink="/products"
+              class="btn btn-primary cart-btn-transform m-3"
+              data-abc="true"
+              >continue shopping</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.cascading-right {
+    margin-right: -50px;
+}
+.w-100 {
+    width: 100% !important;
+    height: 555px;
+    margin-left: 39px;
+}
+.sub {
+    margin: 20px;
+    background: blue;
+    height: 31px;
+    border-radius: 20px;
+}
+
+button {
+    background: blue;
+    border: none;
+    color: white;
+    margin: 6px;
+    border-radius: 20px;
+}
+
+@media (max-width: 991.98px) {
+    .cascading-right {
+        margin-right: 0;
+    }
+}

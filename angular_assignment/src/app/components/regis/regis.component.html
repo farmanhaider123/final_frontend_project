@@ -1,0 +1,94 @@
+
+<h2> Registration</h2>
+<main>
+<form [formGroup]="myForm" (ngSubmit)="postData()">
+    <div class="form-group">
+        <label> FullName</label>
+        <input type="text" name="fullname" class="form-control" formControlName="fullname" />
+        <!-- errors-->
+        <div class="alert alert-danger" *ngIf="fdata['fullname'].invalid && fdata['fullname'].touched">
+            <div *ngIf="fdata['fullname'].errors && fdata['fullname'].errors['required']">
+                Full Name is required
+            </div>
+            <div *ngIf="fdata['fullname'].errors && fdata['fullname'].errors['pattern']">
+                Only alphabte allow
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" class="form-control" formControlName="email" />
+        <div class="alert alert-danger" *ngIf="fdata['email'].invalid && fdata['email'].touched">
+            <div *ngIf="fdata['email'].errors && fdata['email'].errors['required']">
+                Email is required
+            </div>
+            <div *ngIf="fdata['email'].errors && fdata['email'].errors['pattern']">
+                Invalid email example:farman12@gmail.com
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+            <label> Password</label>
+            <input type="password" name="password" class="form-control" formControlName="password" />
+            <div class="alert alert-danger" *ngIf="fdata['password'].invalid && fdata['password'].touched">
+                <div *ngIf="fdata['password'].errors && fdata['password'].errors['required']">
+                  Password is required
+                </div>
+                <div *ngIf="fdata['password'].errors && fdata['password'].errors['pattern']">
+                  password should  Minimum 8 charchter
+                </div>
+            </div>
+            </div>  
+  <div class="form-group">
+        <label> Mobile</label>
+        <input type="text" name="mobile" class="form-control" formControlName="mobile" />
+        <div style="color:red" *ngIf="fdata['mobile'].invalid && fdata['mobile'].touched">
+            <div *ngIf="fdata['mobile'].errors && fdata['mobile'].errors['required']">
+                Mobile is required
+            </div>
+            <div *ngIf="fdata['mobile'].errors && fdata['mobile'].errors['pattern']">
+        10 Digit Mobile Number & start From 6 -9
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        <input type="text" name="age" class="form-control" formControlName="age" />
+        <div class="alert alert-danger" *ngIf="fdata['age'].invalid && fdata['age'].touched">
+            <div *ngIf="fdata['age'].errors && fdata['age'].errors['age']">
+                Mobile is required
+            </div>
+            <div *ngIf="fdata['age'].errors && fdata['age'].errors['ageError']">
+               Please enter Age between 18 to 45
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender:</label>
+        <div>
+            <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+            <label for="male">Male</label>
+        </div>
+    
+        <div>
+            <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+            <label for="female">Female</label>
+        </div>
+        <div class="alert alert-danger" *ngIf="fdata['gender'].invalid && fdata['gender'].touched">
+        <div *ngIf="fdata['gender'].errors && fdata['gender'].errors['required']">
+           Please select option
+        </div>
+            </div>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" name="acceptTerms" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" />
+            <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+        <div class="alert alert-danger" *ngIf="fdata['acceptTerms'].invalid && fdata['acceptTerms'].touched">
+            <div *ngIf="fdata['acceptTerms'].errors && fdata['acceptTerms'].errors['required']">
+            Accept Terms & Conditions
+            </div>
+        </div>
+    </div>
+ <input type="submit" value="Submit" class="btn btn-success" [disabled]="myForm.invalid" />
+</form>
+</main>

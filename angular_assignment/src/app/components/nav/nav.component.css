@@ -1,0 +1,86 @@
+a.nav-link {
+    color:#ff3b72;
+}
+
+a.nav-link:hover {
+    color: #F44336;
+}
+.cart{
+    color: #ececec;
+    text-decoration: none;
+}
+.cart1{
+margin-left: 18px;
+}
+
+button.nav-link {
+    color: #ff113d;
+    border: none;
+    background: white;
+    margin-left: 10px;
+}
+
+button.nav-link:hover {
+    color: #2911ff;
+    border: none;
+    background: white;
+    margin-left: 10px;
+}
+.mat-mdc-menu-item.mdc-list-item {
+    align-items: center;
+    background-color: cornflowerblue;
+}
+button.mat-mdc-menu-item.mat-mdc-focus-indicator.mdc-list-item.ng-tns-c99-1.ng-star-inserted:hover {
+    background: #db0909;
+    color: white
+}
+ .mat-icon {
+     -webkit-user-select: none;
+     user-select: none;
+     background-repeat: no-repeat;
+     display: inline-block;
+     fill: currentColor;
+     height: 22px;
+     width: 24px;
+     overflow: hidden;
+     color: white;
+ }
+.row.mr-3.ml-auto {
+    display: flow-root;
+}
+.logo {
+    margin-left: -883px;
+}
+ 
+ button.mat-mdc-menu-trigger.user.mt-2.d-flex.align-items-center {
+     background:#092841 ;
+     color: white;
+ }
+button.mat-mdc-menu-trigger.user.mt-2.d-flex.align-items-center[_ngcontent-let-c99] {
+    background: #092841;
+    color: white;
+    margin: 15px;
+    border: none;
+}
+mat-toolbar-row.mat-toolbar-row.justify-content-between {
+    background: #092841;
+    height: 97px;
+}
+li{
+    list-style-type: none;
+}
+ span.side {
+     margin-left: 15px;
+     font-size: 19px;
+     color: white;
+     margin-top: 40px;
+ }
+
+ svg.bi.bi-shop {
+     color: white;
+     margin-left: 39px;
+ }
+ .menu{
+    color:black;
+   
+ }

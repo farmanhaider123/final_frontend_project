@@ -1,0 +1,37 @@
+
+.cascading-right {
+    margin-right: -50px;
+}
+input.form-control.ng-untouched.ng-pristine.ng-invalid {
+    margin-top: 20px;
+}
+.sub {
+    margin: 20px;
+    background: blue;
+    height: 31px;
+    border-radius: 20px;
+}
+label {
+    margin-right: 436px;
+    text-align: inherit;
+        margin-top: 15px;
+}
+button {
+    background: blue;
+    border: none;
+    color: white;
+    margin: 6px;
+    border-radius: 20px;
+}
+input.btn.btn-success.mt-2 {
+    width: 341px;
+    background: royalblue;
+}
+label{
+    text-align:left;
+}
+@media (max-width: 991.98px) {
+    .cascading-right {
+        margin-right: 0;
+    }
+}

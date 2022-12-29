@@ -1,0 +1,20 @@
+body {
+    background-color: #eee;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+*[role="form"][_ngcontent-wco-c53] h2[_ngcontent-wco-c53] {
+    margin-left: 3em;
+    margin-bottom: 1em;
+}

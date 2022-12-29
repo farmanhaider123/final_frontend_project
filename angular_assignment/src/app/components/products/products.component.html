@@ -1,0 +1,83 @@
+<div class="form-group">
+  <div class="main">
+    <div clas="search">
+      <label style="color: white">Search Products</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="filteredString"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label style="color: white">sort Products</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="value"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <h1 class="text-center">Products</h1>
+    </div>
+    <div
+      class="col-sm-4"
+      *ngFor="
+        let p of proData
+          | filter : filteredString
+          | sort : [value]
+          | paginate : { itemsPerPage: 3, currentPage: p }
+      "
+    >
+      <div class="card mt-2 d-grid gap-3">
+        <div class="card-body">
+          <img
+            style="width: 200px"
+            class="card-img-top"
+            style="width: 100%; height: 21vw; object-fit: cover"
+            src="{{ p.image }}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ p.pname }}
+            </h5>
+            <p class="card-text">₹ {{ p.price }}</p>
+            <a [routerLink]="['/view', p._id]" class="btn btn-success"
+              >&nbsp;<mat-icon>view_list</mat-icon><span>view</span></a
+            >
+            <a
+              *ngIf="islogedin && isadmin"
+              [routerLink]="['/editproduct', p._id]"
+              style="margin-left: 5px"
+              class="btn btn-primary"
+            >
+              <mat-icon>edit</mat-icon> Edit</a
+            >
+            <button
+              *ngIf="islogedin && isadmin"
+              class="btn btn-danger"
+              style="margin-left: 5px"
+              (click)="delPro(p._id)"
+            >
+              <mat-icon>delete</mat-icon> Delete
+            </button>
+            <a
+              *ngIf="islogedin && !isadmin"
+              style="margin-left: 3px; color: white"
+              (click)="addCart(p._id)"
+              class="btn btn-info"
+            >
+              <mat-icon>add_shopping_cart</mat-icon> add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

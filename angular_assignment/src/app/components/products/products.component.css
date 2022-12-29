@@ -1,0 +1,60 @@
+label {
+    display: inline-block;
+    margin-left: 9px;
+    margin-top: 20px;
+}
+.side {
+    width: 200px;
+    margin-left: -12px;
+    margin-top: -33px;
+    color: white;
+    background: #212529;
+}
+
+a.btn.btn-info.ng-star-inserted:hover {
+    border: none;
+    background: rgb(75, 52, 205);
+}
+a.btn.btn-success.ng-star-inserted:hover {
+    border: none;
+    background: rgb(0, 0, 0);
+}
+a.btn.btn-info.ng-star-inserted {
+    border: none;
+    background: black;
+}
+a.btn.btn-success[_ngcontent-tag-c68]:hover {
+    width: 106px;
+    background: #3f51b5;
+}
+a.btn.btn-success:hover {
+    background-color: blue;
+}
+.main{
+    display: flex;
+    margin-left: 339px;
+    margin-top: -90px;
+
+}
+input.form-control.ng-untouched.ng-pristine.ng-valid {
+    margin-left: 10px;
+    color: white;
+    background: black;
+}
+label {
+    display: inline-block;
+    margin-left: 48px;
+    margin-top: 20px;
+    color: white;
+}
+h1.text-center {
+    margin-top: 25px;
+}
+input.form-control.ng-untouched.ng-pristine.ng-valid {
+    margin-left: 10px;
+    color:white;
+}
+
+input.form-control.ng-pristine.ng-valid.ng-touched {
+    margin-left: -21px;
+}

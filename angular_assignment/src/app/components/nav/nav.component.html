@@ -1,0 +1,80 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon class="menu">menu</mat-icon>
+    </button>
+
+    <span class="logo" style="color: white"> BPK_SHOP</span>
+
+    <div class="row mr-3 ml-auto">
+      <div>
+        <li>
+          <a
+            class="nav-link"
+            routerLink="/cart"
+            class="cart"
+            *ngIf="islogedin && !isadmin"
+          >
+            Cart<mat-icon class="cart1">shopping_basket</mat-icon
+            ><sup style="color: rgb(237, 76, 76)" *ngIf="count > 0"
+              >({{ count }})</sup
+            ></a
+          >
+        </li>
+      </div>
+      <button
+        style="background: #092841; color: white; border: none; margin: 11px"
+        mat-button
+        [matMenuTriggerFor]="menu"
+        class="user mt-2 d-flex align-items-center"
+      >
+        <mat-icon> person_pin</mat-icon> Profile
+        <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+      </button>
+
+      <ul class="row m-0 align-items-center">
+        <li style="list-style-type: type none">
+          <mat-menu #menu="matMenu" class="menu-p">
+            <div *ngIf="islogedin">
+              &nbsp;&nbsp;
+              <li>
+                &nbsp;&nbsp;<mat-icon class="menu"
+                  >assignment_turned_in</mat-icon
+                >Role: {{ myuser.role }}
+              </li>
+              &nbsp;&nbsp;
+              <li></li>
+              <li>
+                <mat-icon class="menu">person</mat-icon> &nbsp;&nbsp;Hi!
+                {{ myuser.firstName }}{{ myuser.lastName }}
+              </li>
+              &nbsp;&nbsp;
+              <li>
+                <mat-icon class="menu"> call</mat-icon>&nbsp;&nbsp;Contact:{{
+                  myuser.contactNumber
+                }}
+              </li>
+              <li>&nbsp;&nbsp;{{ myuser.email }}</li>
+            </div>
+            &nbsp;&nbsp;
+            <button mat-menu-item (click)="logout()" *ngIf="islogedin">
+              <mat-icon class="menu">exit_to_app</mat-icon>
+              Logout
+            </button>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signin" *ngIf="!islogedin">
+                <mat-icon class="menu">assignment_ind</mat-icon>Signin</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signup" *ngIf="!islogedin">
+                <mat-icon class="menu">person_add</mat-icon>Signup</a
+              >
+            </li>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

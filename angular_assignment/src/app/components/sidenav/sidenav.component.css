@@ -1,0 +1,24 @@
+.mat-icon {
+    -webkit-user-select: none;
+    user-select: none;
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 22px;
+    width: 24px;
+    overflow: hidden;
+    color: white;
+}
+mat-nav-list.mat-mdc-nav-list.mat-mdc-list-base.mdc-list {
+    background: #092841;
+}
+span.side {
+    margin-left: 7px;
+    font-size: 16px;
+    color: white;
+    margin-top: 40px;
+}
+svg.bi.bi-shop {
+    color: white;
+    margin-left: 39px;
+}

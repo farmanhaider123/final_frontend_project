@@ -1,0 +1,177 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<section class="text-center text-lg-start">
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div
+          class="card cascading-right"
+          style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+          "
+        >
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Add Product Details</h2>
+            <form>
+              <form #myform="ngForm" (ngSubmit)="postdata()">
+                <div class="form-group">
+                  <label> </label>
+                  <input
+                    type="text"
+                    name="category"
+                    minlength="5"
+                    maxlength="10"
+                    ngModel
+                    #category="ngModel"
+                    required
+                    pattern="[a-zA-Z ]+"
+                    [(ngModel)]="myData.category"
+                    class="form-control"
+                    placeholder="Category *"
+                  />
+                </div>
+                <div
+                  style="color: red; margin-top: 10px"
+                  *ngIf="category.invalid && category.touched"
+                >
+                  <p *ngIf="category.errors && category.errors['required']">
+                    Category is required
+                  </p>
+                  <p *ngIf="category.errors && category.errors['pattern']">
+                    Only alphabet allows
+                  </p>
+                </div>
+                <div class="form-group">
+                  <!-- <label> Name<sup style="color: red">*</sup></label> -->
+                  <input
+                    type="text"
+                    name="pname"
+                    minlength="5"
+                    maxlength="20"
+                    ngModel
+                    #pname="ngModel"
+                    required
+                    pattern="[a-zA-Z ]+"
+                    [(ngModel)]="myData.pname"
+                    class="form-control"
+                    placeholder="Product Name *"
+                  />
+                </div>
+                <div
+                  style="color: red; margin-top: 10px"
+                  *ngIf="pname.invalid && pname.touched"
+                >
+                  <p *ngIf="pname.errors && pname.errors['required']">
+                    Product Name is required
+                  </p>
+                  <p *ngIf="pname.errors && pname.errors['pattern']">
+                    Only alphabet allows
+                  </p>
+                </div>
+                <div class="form-group">
+                  <!-- <label> price<sup style="color: red">*</sup></label> -->
+                  <input
+                    type="text"
+                    name="price"
+                    minlength="1"
+                    maxlength="15"
+                    ngModel
+                    #price="ngModel"
+                    required
+                    [(ngModel)]="myData.price"
+                    class="form-control"
+                    placeholder="Price *"
+                  />
+                </div>
+                <div
+                  style="color: red; margin-top: 10px"
+                  *ngIf="price.invalid && price.touched"
+                >
+                  <p *ngIf="price.errors && price.errors['required']">
+                    Product price is required
+                  </p>
+                </div>
+                <div class="form-group">
+                  <!-- <label> quantity<sup style="color: red">*</sup></label> -->
+                  <input
+                    type="text"
+                    name="quantity"
+                    ngModel
+                    #quantity="ngModel"
+                    required
+                    minlength="1"
+                    maxlength="3"
+                    [(ngModel)]="myData.quantity"
+                    class="form-control"
+                    placeholder="Quantity*"
+                  />
+                </div>
+                <div
+                  style="color: red; margin-top: 10px"
+                  *ngIf="quantity.invalid && quantity.touched"
+                >
+                  <p *ngIf="quantity.errors && quantity.errors['required']">
+                    Product quantity is required
+                  </p>
+                </div>
+                <div class="form-group">
+                  <!-- <label> Description<sup style="color: red">*</sup></label> -->
+                  <input
+                    type="text"
+                    name="description"
+                    ngModel
+                    #description="ngModel"
+                    required
+                    [(ngModel)]="myData.description"
+                    class="form-control"
+                    placeholder="Description *"
+                  />
+                </div>
+                <div
+                  style="color: red; margin-top: 10px"
+                  *ngIf="description.invalid && description.touched"
+                >
+                  <p
+                    *ngIf="description.errors && description.errors['required']"
+                  >
+                    Product Description is required
+                  </p>
+                </div>
+                <div class="form-group">
+                  <label></label>
+                  <input
+                    type="text"
+                    name="image"
+                    [(ngModel)]="myData.image"
+                    class="form-control"
+                    placeholder="Image Url"
+                  />
+                </div>
+
+                <input type="submit" value="Add" class="btn btn-success mt-2" />
+              </form>
+              <br />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+          src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+          class="w-100 rounded-4 shadow-4"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
